@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whats_app_clone/config/theme/theme.dart';
 
 import 'package:whats_app_clone/features/intro/presentation/pages/splash_screen.dart';
 
@@ -11,10 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.dark,
       title: 'Whats App',
-      home: SplashPage(),
+      home: const SplashPage(),
     );
   }
 }

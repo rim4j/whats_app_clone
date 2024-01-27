@@ -8,13 +8,17 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      body: Center(
-        child: SizedBox(
-          child: Lottie.asset(
-            AnimationsConst.whatsApp,
-            width: size.width / 2,
-            fit: BoxFit.fill,
+      body: Container(
+        color: colorScheme.background,
+        child: Center(
+          child: SizedBox(
+            child: Lottie.asset(
+              AnimationsConst.whatsApp,
+              width: size.width / 2,
+              fit: BoxFit.fill,
+            ),
           ),
         ),
       ),
