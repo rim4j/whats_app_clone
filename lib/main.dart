@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:whats_app_clone/common/bloc/bottom_nav.dart';
+import 'package:whats_app_clone/common/widgets/main_wrapper.dart';
 import 'package:whats_app_clone/config/theme/theme.dart';
 
 import 'package:whats_app_clone/features/intro/presentation/pages/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => BottomNavCubit(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +30,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
       title: 'Whats App',
-      home: const SplashPage(),
+      home: const MainWrapper(),
     );
   }
 }
