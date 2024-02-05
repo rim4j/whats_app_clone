@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:whats_app_clone/common/bloc/bottom_nav.dart';
 import 'package:whats_app_clone/common/widgets/main_wrapper.dart';
+import 'package:whats_app_clone/config/routes/on_generate_route.dart';
 import 'package:whats_app_clone/config/theme/theme.dart';
+import 'package:whats_app_clone/features/chats/presentation/pages/chats_page.dart';
 
 import 'package:whats_app_clone/features/intro/presentation/pages/splash_screen.dart';
 
@@ -30,7 +32,9 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
       title: 'Whats App',
-      home: const MainWrapper(),
+      initialRoute: "/",
+      onGenerateRoute: OnGenerateRoute.route,
+      routes: {"/": (context) => const ChatsPage()},
     );
   }
 }

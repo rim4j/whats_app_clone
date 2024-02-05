@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:whats_app_clone/common/constants/dimens.dart';
+import 'package:whats_app_clone/config/routes/route_names.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
-import 'package:whats_app_clone/features/home/presentation/widgets/icon_button_app.dart';
-import 'package:whats_app_clone/features/home/presentation/widgets/item_status.dart';
+import 'package:whats_app_clone/features/chats/presentation/widgets/icon_button_app.dart';
+import 'package:whats_app_clone/features/chats/presentation/widgets/item_status.dart';
 
 class ChatsPage extends StatelessWidget {
   const ChatsPage({super.key});
@@ -110,7 +111,7 @@ class ChatsPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        print("single chat page");
+                        Navigator.pushNamed(context, RouteNames.singleChatPage);
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(Dimens.medium),

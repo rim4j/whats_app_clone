@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:whats_app_clone/common/bloc/bottom_nav.dart';
 import 'package:whats_app_clone/common/widgets/bottom_nav.dart';
-import 'package:whats_app_clone/features/home/presentation/pages/chats_page.dart';
+import 'package:whats_app_clone/features/chats/presentation/pages/chats_page.dart';
 
 class MainWrapper extends StatelessWidget {
   const MainWrapper({super.key});
