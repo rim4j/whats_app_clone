@@ -94,7 +94,12 @@ class SingleChatPage extends StatelessWidget {
             itemBuilder: (context, index) {
               final Message message = messages[index];
               return Padding(
-                padding: const EdgeInsets.all(Dimens.small),
+                padding: EdgeInsets.fromLTRB(
+                  Dimens.small,
+                  Dimens.small,
+                  Dimens.small,
+                  messages.length - 1 == index ? Dimens.xLarge : Dimens.small,
+                ),
                 child: Align(
                   alignment:
                       message.me ? Alignment.bottomRight : Alignment.bottomLeft,
