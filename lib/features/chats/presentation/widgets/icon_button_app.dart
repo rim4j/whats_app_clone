@@ -24,7 +24,7 @@ class IconButtonApp extends StatelessWidget {
         height: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: colorScheme.onPrimary.withAlpha(100),
+          color: colorScheme.onPrimary.withAlpha(50),
         ),
         child: icon,
       ),

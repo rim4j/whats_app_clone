@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       title: 'Whats App',
       initialRoute: "/",
       onGenerateRoute: OnGenerateRoute.route,
-      routes: {"/": (context) => const ChatsPage()},
+      routes: {"/": (context) => const MainWrapper()},
     );
   }
 }

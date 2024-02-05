@@ -27,4 +27,8 @@ class GradientColors {
     Color.fromARGB(255, 70, 184, 133),
     Color.fromARGB(255, 10, 28, 20),
   ];
+  static const List<Color> message = [
+    Color.fromARGB(255, 11, 11, 11),
+    Color.fromARGB(255, 24, 65, 47),
+  ];
 }
