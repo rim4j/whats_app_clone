@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -45,7 +44,7 @@ class SingleChatPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         elevation: 0,
-        toolbarHeight: 85,
+        toolbarHeight: 80,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -60,11 +59,11 @@ class SingleChatPage extends StatelessWidget {
                 ),
                 const SizedBox(width: Dimens.medium),
                 Container(
-                  width: 70,
-                  height: 70,
+                  width: 60,
+                  height: 60,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(32),
+                    borderRadius: BorderRadius.circular(26),
                   ),
                 ),
                 const SizedBox(width: Dimens.small),
