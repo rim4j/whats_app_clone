@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whats_app_clone/common/constants/asset_images.dart';
+import 'package:whats_app_clone/common/widgets/custom_button.dart';
+import 'package:whats_app_clone/config/routes/route_names.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -20,6 +22,7 @@ class WelcomePage extends StatelessWidget {
               child: Text("Welcome to WhatsApp Clone",
                   style: robotoBold.copyWith(
                     fontSize: 20,
+                    color: colorScheme.onPrimary,
                   )),
             ),
             Image.asset(AssetImages.welcomeImage),
@@ -33,24 +36,13 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 40,
                 ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: 200,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: colorScheme.primary,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "AGREE AND CONTINUE",
-                        style: robotoMedium.copyWith(fontSize: 15),
-                      ),
-                    ),
-                  ),
+                CustomButton(
+                  title: "AGREE AND CONTINUE",
+                  onTap: () {
+                    Navigator.pushNamed(context, RouteNames.loginPage);
+                  },
                 )
               ],
             )
