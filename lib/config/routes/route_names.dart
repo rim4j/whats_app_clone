@@ -4,4 +4,6 @@ class RouteNames {
   static const welcomePage = "welcomePage";
   static const loginPage = "loginPage";
   static const otpPage = "otpPage";
+  static const initProfilePage = "initProfilePage";
+  static const homePage = "homePage";
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
 import 'package:whats_app_clone/common/widgets/custom_button.dart';
+import 'package:whats_app_clone/config/routes/route_names.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
 
 class OtpPage extends StatefulWidget {
@@ -77,6 +78,7 @@ class _OtpPageState extends State<OtpPage> {
 
   void submitCode() {
     if (_otpController.text.isNotEmpty) {
+      Navigator.pushNamed(context, RouteNames.initProfilePage);
       print(_otpController.text);
     }
   }
