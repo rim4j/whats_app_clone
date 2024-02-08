@@ -43,6 +43,7 @@ dependencies:
   country_picker: ^2.0.23
   country_pickers: ^2.0.0
   toastification: ^1.2.0
+  flutter_pin_code_fields: ^2.2.0
 
 dev_dependencies:
   flutter_test:

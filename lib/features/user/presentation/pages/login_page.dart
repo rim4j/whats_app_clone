@@ -3,6 +3,7 @@ import 'package:country_pickers/country_pickers.dart';
 import 'package:flutter/material.dart';
 import 'package:whats_app_clone/common/utils/toast.dart';
 import 'package:whats_app_clone/common/widgets/custom_button.dart';
+import 'package:whats_app_clone/config/routes/route_names.dart';
 import 'package:whats_app_clone/config/theme/app_colors.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
 
@@ -120,6 +121,7 @@ class _LoginPageState extends State<LoginPage> {
     if (_phoneController.text.isNotEmpty) {
       _phoneNumber = "+$_countryCode${_phoneController.text}";
       print("phoneNumber $_phoneNumber");
+      Navigator.pushNamed(context, RouteNames.otpPage);
     } else {
       CustomToast.showToastError(context, "Please enter your phone number");
     }

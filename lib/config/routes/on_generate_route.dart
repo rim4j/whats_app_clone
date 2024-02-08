@@ -4,6 +4,7 @@ import 'package:whats_app_clone/config/theme/app_styles.dart';
 import 'package:whats_app_clone/features/chats/presentation/pages/single_chat_page.dart';
 import 'package:whats_app_clone/features/intro/presentation/pages/welcome_page.dart';
 import 'package:whats_app_clone/features/user/presentation/pages/login_page.dart';
+import 'package:whats_app_clone/features/user/presentation/pages/otp_page.dart';
 
 class OnGenerateRoute {
   OnGenerateRoute._();
@@ -20,6 +21,9 @@ class OnGenerateRoute {
 
       case RouteNames.loginPage:
         return routeBuilder(const LoginPage());
+
+      case RouteNames.otpPage:
+        return routeBuilder(const OtpPage());
       default:
         return routeBuilder(const NoPageFound());
     }
