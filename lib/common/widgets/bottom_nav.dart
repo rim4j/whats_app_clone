@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:whats_app_clone/common/bloc/bottom_nav.dart';
 import 'package:whats_app_clone/config/theme/app_colors.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
@@ -52,7 +53,7 @@ class BottomNav extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                     ),
                     child: const Icon(
-                      Icons.camera_alt,
+                      Icons.message,
                       color: Colors.white,
                     ),
                   ),
@@ -65,7 +66,9 @@ class BottomNav extends StatelessWidget {
                   children: [
                     NavBarIcon(
                       text: "Chats",
-                      icon: index == 0 ? Icons.message : Icons.message,
+                      icon: index == 0
+                          ? FontAwesomeIcons.commentDots
+                          : FontAwesomeIcons.commentDots,
                       selected: index == 0 ? true : false,
                       onPressed: () {
                         BlocProvider.of<BottomNavCubit>(context)

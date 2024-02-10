@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:whats_app_clone/common/constants/dimens.dart';
+import 'package:whats_app_clone/common/widgets/profile_widget.dart';
 import 'package:whats_app_clone/config/theme/app_colors.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
 import 'package:whats_app_clone/features/chats/presentation/widgets/icon_button_app.dart';
@@ -58,12 +59,12 @@ class SingleChatPage extends StatelessWidget {
                   },
                 ),
                 const SizedBox(width: Dimens.medium),
-                Container(
+                SizedBox(
                   width: 60,
                   height: 60,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
+                  child: ClipRRect(
                     borderRadius: BorderRadius.circular(26),
+                    child: profileWidget(),
                   ),
                 ),
                 const SizedBox(width: Dimens.small),

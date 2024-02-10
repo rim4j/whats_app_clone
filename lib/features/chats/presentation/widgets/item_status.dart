@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scale_button/scale_button.dart';
 import 'package:whats_app_clone/common/constants/dimens.dart';
+import 'package:whats_app_clone/common/widgets/profile_widget.dart';
 
 class ItemStatus extends StatelessWidget {
   final VoidCallback onTap;
@@ -15,12 +16,12 @@ class ItemStatus extends StatelessWidget {
       onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.only(left: Dimens.small, right: Dimens.small),
-        child: Container(
+        child: SizedBox(
           width: 70,
           height: 70,
-          decoration: BoxDecoration(
-            color: Colors.white,
+          child: ClipRRect(
             borderRadius: BorderRadius.circular(32),
+            child: profileWidget(),
           ),
         ),
       ),

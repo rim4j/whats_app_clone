@@ -64,10 +64,10 @@ class _InitProfilePageState extends State<InitProfilePage> {
                   GestureDetector(
                     onTap: pickGalleryImage,
                     child: SizedBox(
-                      width: 100,
-                      height: 100,
+                      width: 70,
+                      height: 70,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
+                        borderRadius: BorderRadius.circular(32),
                         child: profileWidget(image: _image),
                       ),
                     ),
@@ -95,7 +95,8 @@ class _InitProfilePageState extends State<InitProfilePage> {
             CustomButton(
               title: "Next",
               onTap: () {
-                Navigator.pushNamed(context, RouteNames.homePage);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, RouteNames.homePage, (route) => false);
               },
             ),
             const SizedBox(height: 20)

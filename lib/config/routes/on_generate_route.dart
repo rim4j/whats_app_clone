@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:whats_app_clone/common/widgets/main_wrapper.dart';
 import 'package:whats_app_clone/config/routes/route_names.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
 import 'package:whats_app_clone/features/chats/presentation/pages/single_chat_page.dart';
+import 'package:whats_app_clone/features/home/presentation/home_page.dart';
 import 'package:whats_app_clone/features/intro/presentation/pages/welcome_page.dart';
 import 'package:whats_app_clone/features/user/presentation/pages/init_profile_page.dart';
 import 'package:whats_app_clone/features/user/presentation/pages/login_page.dart';
@@ -31,7 +31,7 @@ class OnGenerateRoute {
         return routeBuilder(const InitProfilePage());
 
       case RouteNames.homePage:
-        return routeBuilder(const MainWrapper());
+        return routeBuilder(const HomePage());
       default:
         return routeBuilder(const NoPageFound());
     }

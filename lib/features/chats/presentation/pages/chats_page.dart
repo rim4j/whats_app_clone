@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:scale_button/scale_button.dart';
 import 'package:whats_app_clone/common/constants/dimens.dart';
+import 'package:whats_app_clone/common/widgets/profile_widget.dart';
 import 'package:whats_app_clone/config/routes/route_names.dart';
+import 'package:whats_app_clone/config/theme/app_colors.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
 import 'package:whats_app_clone/features/chats/presentation/widgets/icon_button_app.dart';
 import 'package:whats_app_clone/features/chats/presentation/widgets/item_status.dart';
@@ -48,20 +51,70 @@ class ChatsPage extends StatelessWidget {
             ),
             const SizedBox(height: Dimens.large),
             //status
-            Container(
-              width: size.width,
-              height: 70,
-              color: Colors.black,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 20,
-                itemBuilder: (context, index) {
-                  return ItemStatus(
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  //your status
+                  ScaleButton(
                     onTap: () {
-                      print(index);
+                      print("your status");
                     },
-                  );
-                },
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: Dimens.small, right: Dimens.small),
+                          child: SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(32),
+                              child: profileWidget(),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          right: 0,
+                          bottom: 0,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: GradientColors.floatingButtonGradient,
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            width: 30,
+                            height: 30,
+                            child: const Icon(Icons.add, size: 25),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  //users status
+                  Container(
+                    width: size.width,
+                    height: 70,
+                    color: Colors.black,
+                    child: ListView.builder(
+                      shrinkWrap: false,
+                      physics: const NeverScrollableScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 20,
+                      itemBuilder: (context, index) {
+                        return ItemStatus(
+                          onTap: () {
+                            print(index);
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: Dimens.large),
@@ -117,12 +170,12 @@ class ChatsPage extends StatelessWidget {
                         padding: const EdgeInsets.all(Dimens.medium),
                         child: Row(
                           children: [
-                            Container(
+                            SizedBox(
                               width: 70,
                               height: 70,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
+                              child: ClipRRect(
                                 borderRadius: BorderRadius.circular(32),
+                                child: profileWidget(),
                               ),
                             ),
                             const SizedBox(width: Dimens.medium),

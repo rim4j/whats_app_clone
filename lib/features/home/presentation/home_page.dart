@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:whats_app_clone/common/bloc/bottom_nav.dart';
 import 'package:whats_app_clone/common/widgets/bottom_nav.dart';
+import 'package:whats_app_clone/features/call/presentation/pages/calls_history_page.dart';
 import 'package:whats_app_clone/features/chats/presentation/pages/chats_page.dart';
+import 'package:whats_app_clone/features/home/presentation/contacts_page.dart';
 
-class MainWrapper extends StatelessWidget {
-  const MainWrapper({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,8 @@ class MainWrapper extends StatelessWidget {
 
     List<Widget> pages = [
       const ChatsPage(),
-      const StatusPage(),
-      const CallsPage(),
+      const ContactsPage(),
+      const CallsHistoryPage(),
     ];
 
     return Scaffold(
@@ -38,41 +40,6 @@ class MainWrapper extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-
-    return Container(
-      color: colorScheme.background,
-    );
-  }
-}
-
-class CallsPage extends StatelessWidget {
-  const CallsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blueGrey,
-    );
-  }
-}
-
-class StatusPage extends StatelessWidget {
-  const StatusPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.brown,
     );
   }
 }
