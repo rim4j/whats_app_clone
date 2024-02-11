@@ -4,7 +4,7 @@ import 'package:whats_app_clone/common/bloc/bottom_nav.dart';
 import 'package:whats_app_clone/common/widgets/bottom_nav.dart';
 import 'package:whats_app_clone/features/call/presentation/pages/calls_history_page.dart';
 import 'package:whats_app_clone/features/chats/presentation/pages/chats_page.dart';
-import 'package:whats_app_clone/features/home/presentation/contacts_page.dart';
+import 'package:whats_app_clone/features/home/presentation/pages/contacts_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -39,10 +39,34 @@ class ChatsPage extends StatelessWidget {
                         onTap: () {},
                       ),
                       const SizedBox(width: Dimens.small),
-                      IconButtonApp(
-                        colorScheme: colorScheme,
-                        icon: const Icon(FontAwesomeIcons.ellipsisVertical),
-                        onTap: () {},
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: colorScheme.onPrimary.withAlpha(50),
+                        ),
+                        child: PopupMenuButton<String>(
+                          splashRadius: 25,
+                          icon: const Icon(FontAwesomeIcons.ellipsisVertical,
+                              color: Colors.white),
+                          color: colorScheme.background,
+                          onSelected: (value) {},
+                          itemBuilder: (BuildContext context) =>
+                              <PopupMenuEntry<String>>[
+                            PopupMenuItem<String>(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, RouteNames.settingsPage);
+                              },
+                              value: "Settings",
+                              child: Text(
+                                'Settings',
+                                style: robotoMedium,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
