@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:whats_app_clone/config/routes/route_names.dart';
 import 'package:whats_app_clone/config/theme/app_styles.dart';
+import 'package:whats_app_clone/features/call/presentation/pages/call_contacts_page.dart';
 import 'package:whats_app_clone/features/chats/presentation/pages/single_chat_page.dart';
 import 'package:whats_app_clone/features/home/presentation/pages/home_page.dart';
 import 'package:whats_app_clone/features/home/presentation/pages/settings_page.dart';
 import 'package:whats_app_clone/features/intro/presentation/pages/welcome_page.dart';
+import 'package:whats_app_clone/features/status/presentation/pages/my_status_page.dart';
 import 'package:whats_app_clone/features/user/presentation/pages/init_profile_page.dart';
 import 'package:whats_app_clone/features/user/presentation/pages/login_page.dart';
 import 'package:whats_app_clone/features/user/presentation/pages/otp_page.dart';
@@ -36,6 +38,12 @@ class OnGenerateRoute {
 
       case RouteNames.settingsPage:
         return routeBuilder(const SettingsPage());
+
+      case RouteNames.myStatusPage:
+        return routeBuilder(const MyStatusPage());
+
+      case RouteNames.callContactsPage:
+        return routeBuilder(const CallContactsPage());
       default:
         return routeBuilder(const NoPageFound());
     }

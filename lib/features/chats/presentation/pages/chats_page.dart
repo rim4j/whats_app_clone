@@ -57,6 +57,17 @@ class ChatsPage extends StatelessWidget {
                             PopupMenuItem<String>(
                               onTap: () {
                                 Navigator.pushNamed(
+                                    context, RouteNames.myStatusPage);
+                              },
+                              value: "My Status",
+                              child: Text(
+                                'My Status',
+                                style: robotoMedium,
+                              ),
+                            ),
+                            PopupMenuItem<String>(
+                              onTap: () {
+                                Navigator.pushNamed(
                                     context, RouteNames.settingsPage);
                               },
                               value: "Settings",
@@ -79,10 +90,10 @@ class ChatsPage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  //your status
+                  //my status
                   ScaleButton(
                     onTap: () {
-                      print("your status");
+                      print("create your status");
                     },
                     child: Stack(
                       children: [

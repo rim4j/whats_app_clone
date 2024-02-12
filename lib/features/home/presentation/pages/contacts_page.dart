@@ -14,6 +14,7 @@ class ContactsPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
+        centerTitle: false,
         elevation: 0,
         title: Text(
           "Select Contact",
