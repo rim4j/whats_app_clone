@@ -13,6 +13,7 @@ ThemeData lightTheme = ThemeData(
     secondary: AppColorsLight.secondary,
     onSecondary: AppColorsLight.backGround,
     onSecondaryContainer: AppColorsLight.primary,
+    onBackground: AppColorsLight.primary,
   ),
 );
 
@@ -26,5 +27,6 @@ ThemeData darkTheme = ThemeData(
     secondary: AppColorsDark.secondary,
     onSecondary: AppColorsDark.dark,
     onSecondaryContainer: AppColorsDark.primary,
+    onBackground: AppColorsDark.dark,
   ),
 );

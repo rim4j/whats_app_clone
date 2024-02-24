@@ -33,8 +33,8 @@ class HomePage extends StatelessWidget {
             },
           ),
           Positioned(
-            left: 0,
-            right: 0,
+            left: -30,
+            right: -30,
             bottom: 0,
             child: BottomNav(controller: pageController),
           ),

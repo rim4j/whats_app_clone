@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:whats_app_clone/common/bloc/bottom_nav.dart';
 import 'package:whats_app_clone/config/theme/app_colors.dart';
-import 'package:whats_app_clone/config/theme/app_styles.dart';
 
 class BottomNav extends StatelessWidget {
   final PageController controller;
@@ -15,7 +14,8 @@ class BottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
+
     double height = size.height / 14;
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
@@ -27,14 +27,17 @@ class BottomNav extends StatelessWidget {
           child: Stack(
             children: [
               CustomPaint(
-                size: Size(size.width, height + 6),
+                size: Size(double.infinity, height + 6),
                 painter: BottomNavCurvePainter(
-                  backgroundColor: colorScheme.onSecondary,
+                  backgroundColor: colorScheme.onBackground,
                 ),
               ),
               Center(
                 heightFactor: 0.6,
                 child: FloatingActionButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
                   backgroundColor: colorScheme.background,
                   onPressed: () {
                     BlocProvider.of<BottomNavCubit>(context)
@@ -45,12 +48,19 @@ class BottomNav extends StatelessWidget {
                     width: size.width / 7,
                     height: size.width / 7,
                     decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.green.withOpacity(0.4),
+                          blurRadius: 10,
+                          spreadRadius: 2,
+                        ),
+                      ],
                       gradient: const LinearGradient(
                         colors: GradientColors.floatingButtonGradient,
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(100),
                     ),
                     child: const Icon(
                       Icons.message,
@@ -60,7 +70,7 @@ class BottomNav extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: height,
+                height: height + 6,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -183,10 +193,10 @@ class NavBarIcon extends StatelessWidget {
             color: selected ? selectedColor : defaultColor,
           ),
         ),
-        Text(
-          text,
-          style: robotoRegular,
-        ),
+        // Text(
+        //   text,
+        //   style: robotoRegular.copyWith(fontSize: 12),
+        // ),
       ],
     );
   }
