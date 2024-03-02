@@ -6,16 +6,20 @@ import 'package:whats_app_clone/config/routes/on_generate_route.dart';
 import 'package:whats_app_clone/config/theme/theme.dart';
 
 import 'package:whats_app_clone/features/intro/presentation/pages/splash_page.dart';
+import 'package:whats_app_clone/features/user/presentation/bloc/user_bloc.dart';
+import 'package:whats_app_clone/locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await setup();
   runApp(
     MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (context) => BottomNavCubit(),
         ),
+        BlocProvider(create: (context) => locator<UserBloc>()),
       ],
       child: const MyApp(),
     ),
